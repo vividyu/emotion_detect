@@ -119,6 +119,7 @@ Thumbs.db
 
 # Results
 results/
+test_images/
 
 # emonet repo
 emonet/
