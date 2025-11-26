@@ -123,3 +123,8 @@ test_images/
 
 # emonet repo
 emonet/
+
+#
+data/
+*.zip
+*.rar
