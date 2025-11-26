@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 def iter_image_files(path: str) -> Iterable[str]:
     """从可能是文件或目录的路径中生成图像文件。"""
     if os.path.isdir(path):
-        patterns = ["*.jpg", "*.jpeg", "*.png", "*.bmp"]
+        patterns = ["*.jpg", "*.jpeg", "*.png", "*.bmp", "*.tiff", "*.tif"]
         for pattern in patterns:
             yield from glob.glob(os.path.join(path, pattern))
     elif os.path.isfile(path):
