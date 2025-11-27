@@ -38,16 +38,30 @@ def detect_faces(image_path: str) -> List[Tuple[List[int], np.ndarray]]:
         logger.warning("图像中未找到面部。")
         return []
 
-    landmarks_list, scores, bbox_array = output
-    faces = []
-    for i, (landmarks, bbox) in enumerate(zip(landmarks_list, bbox_array)):
-        x1, y1, x2, y2 = bbox[:4].astype(int)
-        w, h = x2 - x1, y2 - y1
-        bbox_dims = [int(x1), int(y1), int(w), int(h)]
-        faces.append((bbox_dims, landmarks))
-        logger.debug("面部 %d：bbox=%s", i + 1, bbox_dims)
+    # 处理不同格式的输出
+    try:
+        if isinstance(output, tuple) and len(output) == 3:
+            landmarks_list, scores, bbox_array = output
+        else:
+            logger.warning("意外的输出格式")
+            return []
+        
+        if landmarks_list is None or bbox_array is None:
+            logger.warning("图像中未找到面部。")
+            return []
+        
+        faces = []
+        for i, (landmarks, bbox) in enumerate(zip(landmarks_list, bbox_array)):
+            x1, y1, x2, y2 = bbox[:4].astype(int)
+            w, h = x2 - x1, y2 - y1
+            bbox_dims = [int(x1), int(y1), int(w), int(h)]
+            faces.append((bbox_dims, landmarks))
+            logger.debug("面部 %d：bbox=%s", i + 1, bbox_dims)
 
-    return faces
+        return faces
+    except Exception as e:
+        logger.warning("处理面部检测结果时出错：%s", e)
+        return []
 
 
 def align_face(image: np.ndarray, landmarks: np.ndarray, target_size: int = 256) -> np.ndarray:
