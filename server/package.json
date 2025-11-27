@@ -1,0 +1,20 @@
+{
+  "name": "emotion-detection-api",
+  "version": "1.0.0",
+  "description": "Node.js API server for emotion detection data visualization",
+  "main": "api-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node api-server.js",
+    "dev": "nodemon api-server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "cors": "^2.8.5"
+  }
+}

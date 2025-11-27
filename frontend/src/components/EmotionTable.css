@@ -1,0 +1,133 @@
+/* EmotionTable.css */
+.emotion-table-container {
+  width: 100%;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.emotion-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.emotion-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.emotion-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.emotion-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.emotion-table th.sortable:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.emotion-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.emotion-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.emotion-table td {
+  padding: 0.75rem 1rem;
+}
+
+.image-name {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.emotion-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.emotion-emoji {
+  font-size: 1.3rem;
+}
+
+.valence-cell,
+.arousal-cell {
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+.bbox-cell {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* 分页 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-pagination {
+  padding: 0.5rem 1rem;
+  border: 2px solid #667eea;
+  background: white;
+  color: #667eea;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-pagination:hover:not(:disabled) {
+  background: #667eea;
+  color: white;
+}
+
+.btn-pagination:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: #ccc;
+  color: #ccc;
+}
+
+.page-info {
+  font-weight: 600;
+  color: #555;
+  padding: 0 1rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .emotion-table {
+    font-size: 0.85rem;
+  }
+
+  .emotion-table th,
+  .emotion-table td {
+    padding: 0.5rem;
+  }
+
+  .bbox-cell {
+    font-size: 0.75rem;
+  }
+}
