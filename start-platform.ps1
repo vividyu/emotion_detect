@@ -1,4 +1,4 @@
-# 情绪检测平台 - 启动脚本
+﻿# 情绪检测平台 - 启动脚本
 # Emotion Detection Platform - Start Script
 
 Write-Host "==================================" -ForegroundColor Cyan

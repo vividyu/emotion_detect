@@ -1,4 +1,4 @@
-# 情绪检测平台 - 快速安装脚本
+﻿# 情绪检测平台 - 快速安装脚本
 # Emotion Detection Platform - Quick Start Script
 
 Write-Host "==================================" -ForegroundColor Cyan
